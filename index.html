@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Chatbot with Voice Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('data:image/jpeg;base64,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') fixed center/cover no-repeat;
+      background-color: #f9fafb;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #1a202c;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    body {
+      transition: background-color 0.3s, color 0.3s;
+      background: url('0b7d2fd5-a0a8-43ab-8630-d0e034f7c114.png') fixed center/cover no-repeat;
+    }
+    .dark-mode .card {
+      background-color: rgba(45, 55, 72, 0.9);
+      color: #f7fafc;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #1a202c;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container mx-auto px-4 py-6">
+    <div class="fixed top-4 right-4">
+      <button id="theme-toggle" class="p-2 rounded-full bg-gray-200">
+        <span id="theme-icon">🌞</span>
+      </button>
+    </div>
+
+    <header class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-2">Medical Chatbot with Voice Assistant</h1>
+      <p class="text-base sm:text-lg text-primary max-w-2xl mx-auto">Describe your symptoms or speak to get advice tailored to you.</p>
+    </header>
+
+    <div class="max-w-3xl mx-auto card rounded-xl shadow p-6">
+      <textarea id="input-text" class="w-full h-40 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Describe your symptoms here..."></textarea>
+      <div class="mt-4 flex justify-between items-center">
+        <button id="start-voice" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">🎤 Start Voice</button>
+        <button id="get-advice-btn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Get Advice</button>
+      </div>
+    </div>
+
+    <div id="result-section" class="max-w-3xl mx-auto mt-6 card rounded-xl shadow p-6 hidden">
+      <h2 class="text-xl font-semibold mb-3">Suggested Remedy</h2>
+      <div id="advice-text" class="text-primary whitespace-pre-wrap"></div>
+    </div>
+  </div>
+
+  <script>
+    const inputText = document.getElementById("input-text");
+
+    document.getElementById("get-advice-btn").addEventListener("click", async () => {
+      const text = inputText.value.trim();
+      if (!text) {
+        alert("Please describe your symptoms.");
+        return;
+      }
+
+      const btn = document.getElementById("get-advice-btn");
+      btn.disabled = true;
+      btn.textContent = "Getting advice...";
+
+      try {
+        const response = await fetch("http://localhost:3000/medical-advice", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text })
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Unknown error");
+
+        document.getElementById("advice-text").textContent = data.advice;
+        document.getElementById("result-section").classList.remove("hidden");
+
+        const utterance = new SpeechSynthesisUtterance(data.advice);
+        speechSynthesis.speak(utterance);
+      } catch (err) {
+        console.error(err);
+        alert("Failed to get advice. Check console for details.");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Get Advice";
+      }
+    });
+
+    document.getElementById("start-voice").addEventListener("click", () => {
+      const recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.start();
+      document.getElementById("start-voice").textContent = "🎤 Listening...";
+
+      recognition.onresult = (event) => {
+        const speechResult = event.results[0][0].transcript;
+        inputText.value = speechResult;
+      };
+
+      recognition.onend = () => {
+        document.getElementById("start-voice").textContent = "🎤 Start Voice";
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Speech recognition error", event);
+        document.getElementById("start-voice").textContent = "🎤 Start Voice";
+      };
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-icon");
+
+      themeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+          themeIcon.textContent = "🌙";
+        } else {
+          themeIcon.textContent = "🌞";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
